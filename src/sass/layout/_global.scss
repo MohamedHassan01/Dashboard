@@ -1,0 +1,10 @@
+.page {
+  min-height: 100vh;
+  background-color: $flatBlack;
+  color: #fff;
+  .content-area {
+    width: calc(100% - 250px);
+    float: right;
+    min-height: 100%;
+  }
+}
