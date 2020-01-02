@@ -4,6 +4,72 @@
   top: 0;
   left: 0;
   height: 100%;
-  background-color: $flatBlackAlt;
-  padding: 15px;
+  background-color: $flatBlueAlt;
+  transition: all 0.5s ease-in-out;
+  .logo {
+    font-size: 50px;
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    transition: all 0.5s ease-in-out;
+  }
+  .links-area {
+    padding-left: 0;
+    li {
+      a {
+        color: rgb(153, 153, 153);
+        text-decoration: none;
+        display: flex;
+        width: 100%;
+        padding: 15px 30px;
+        .link-text {
+          margin: 0 3px;
+        }
+        .v-icon {
+          color: rgb(153, 153, 153);
+          transition: all 0.3s ease-in-out;
+          &.arrow-icon {
+            flex: auto;
+            &.down {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        &.router-link-exact-active,
+        &:hover {
+          color: #fff;
+          .v-icon {
+            color: #fff;
+          }
+        }
+      }
+      .child-links {
+        background-color: $flatBlue;
+        border-right: 2px solid $flatBlueAlt;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+        a {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  &.min-sidebar {
+    width: 80px;
+    .logo {
+      padding: 0;
+      font-size: 20px !important;
+      font-weight: normal !important;
+    }
+    .links-area {
+      a {
+        padding: 15px 10px;
+        .link-text {
+          display: none;
+        }
+      }
+    }
+  }
 }
