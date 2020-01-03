@@ -35,7 +35,7 @@ export default {
 
   data: () => ({
     items: [
-      { text: "Dashboard", icon: "mdi-view-dashboard-outline", router: "/" },
+      { text: "Dashboard", icon: "mdi-view-dashboard", router: "/" },
       {
         text: "Forms",
         icon: "mdi-view-dashboard",

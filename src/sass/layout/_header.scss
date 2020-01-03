@@ -1,0 +1,34 @@
+.v-list {
+  background-color: $flatBlueAlt !important;
+}
+
+.v-btn__content {
+  position: relative;
+  .notifications-count {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    background-color: $flatRedAlt;
+    font-size: 12px;
+    padding: 1.5px 3px;
+    border-radius: 50%;
+  }
+}
+
+.noti-head {
+  opacity: 0.6;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.noti-footer {
+  opacity: 1;
+  text-align: center;
+  padding: 5px;
+  a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff !important;
+  }
+}
