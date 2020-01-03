@@ -1,6 +1,6 @@
 <template>
   <div :class="['sidebar', { 'min-sidebar': minSidebar }]">
-    <div class="logo display-2 font-weight-black">Speed</div>
+    <div class="logo font-weight-black">Speed</div>
 
     <ul class="links-area list-unstyle">
       <li v-for="(item, i) in items" :key="i">
@@ -62,7 +62,11 @@ export default {
         router: "/charts",
         options: true,
         childLinks: [
-          { text: "Users", icon: "mdi-view-dashboard", router: "/charts/users" },
+          {
+            text: "Users",
+            icon: "mdi-view-dashboard",
+            router: "/charts/users"
+          },
           {
             text: "Clients",
             icon: "mdi-view-dashboard",
@@ -80,9 +84,9 @@ export default {
       a.addEventListener("click", () => {
         let childLink = a.parentElement.nextElementSibling;
 
-        if (!childLink.style.height || childLink.style.height == 0+'px') {
+        if (!childLink.style.height || childLink.style.height == 0 + "px") {
           childLink.style.height = `${childLink.scrollHeight}px`;
-          a.classList.add("down");  // To rotate arrow icon
+          a.classList.add("down"); // To rotate arrow icon
         } else if (childLink.style.height) {
           childLink.style.height = 0;
           a.classList.remove("down");

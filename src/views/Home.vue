@@ -4,9 +4,11 @@
 
     <div :class="['content-area', { 'min-sidebar': minSidebar }]">
       <Header />
-      <div class="content">
-        <h1>Home</h1>
-      </div>
+      <v-container>
+        <div class="content">
+          <PageHead :pageTitle="pageTitle" />
+        </div>
+      </v-container>
     </div>
   </div>
 </template>
@@ -14,13 +16,19 @@
 <script>
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+import PageHead from "@/components/PageHead";
 
 export default {
   name: "home",
 
+  data: () => ({
+    pageTitle: "Home"
+  }),
+
   components: {
     Sidebar,
-    Header
+    Header,
+    PageHead
   },
 
   computed: {
