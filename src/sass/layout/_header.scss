@@ -2,7 +2,7 @@
   background-color: $flatBlueAlt !important;
 }
 
-.v-btn__content {
+.notifications-container {
   position: relative;
   .notifications-count {
     position: absolute;
@@ -31,4 +31,13 @@
     font-size: 14px;
     color: #fff !important;
   }
+}
+
+.user-btn {
+  margin-left: 8px;
+}
+.v-avatar {
+  height: 40px !important;
+  min-width: 40px !important;
+  width: 40px !important;
 }
