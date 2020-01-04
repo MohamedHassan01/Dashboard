@@ -40,11 +40,43 @@
           </div>
         </v-list>
       </v-menu>
+
+      <v-btn
+        icon
+        @click="toggleFullscreen()"
+      >
+        <v-icon ref="screenIcon" v-text="screenIcon"></v-icon>
+      </v-btn>
     </v-app-bar>
   </div>
 </template>
 
 <script>
+let elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullScreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullScreen) {
+    elem.webkitRequestFullScreen();
+  } else if (elem.mozRequestFullScreen) {
+    elem.mozRequestFullScreen();
+  } else if (elem.msRequestFullScreen) {
+    elem.msRequestFullScreen();
+  }
+}
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+}
+
 export default {
   name: "header",
 
@@ -70,7 +102,9 @@ export default {
         icon: "mdi-face-profile",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit adipisicing."
       }
-    ]
+    ],
+
+    screenIcon: 'mdi-fullscreen'
   }),
 
   methods: {
@@ -79,7 +113,17 @@ export default {
     },
 
     openNotification(noti) {
-      console.log(noti.title)
+      console.log(noti.title);
+    },
+
+    toggleFullscreen() {
+      if (this.screenIcon == 'mdi-fullscreen') {
+        this.screenIcon = 'mdi-fullscreen-exit';
+        openFullscreen();
+      } else {
+        this.screenIcon = 'mdi-fullscreen';
+        closeFullscreen();
+      }
     }
   }
 };
